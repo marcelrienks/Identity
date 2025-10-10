@@ -1,12 +1,5 @@
 # Marcel Rienks - Portfolio Website
-
-> A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.
-
-[![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)> A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.
-[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)> A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.> A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.
+A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.
 
 ## 🎯 **Project Overview**
 
