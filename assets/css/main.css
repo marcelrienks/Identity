@@ -20,8 +20,8 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #F4F4F8; /* Soft White - Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #739BD4; /* Azzurro La Plata - Color for headings, subheadings and title throughout the website */
+  --default-color: #000000; /* Black - Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Black - Color for headings, subheadings and title throughout the website */
   --accent-color: #739BD4; /* Azzurro La Plata - Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* Pure white - The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -144,8 +144,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -155,14 +155,17 @@ h6 {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--contrast-color), transparent 90%);
 }
 
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 8px solid color-mix(in srgb, var(--contrast-color), transparent 85%);
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 
 .header .logo {
