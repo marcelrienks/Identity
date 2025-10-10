@@ -20,42 +20,45 @@
 /* Global Colors - Three primary colors for the entire website */
 :root { 
   /* Main Color Palette */
-  --main-color: #739BD4; /* Pale Blue - Main brand color for sidebar, headers, and blue elements */
-  --secondary-color: #F4F4F8; /* Soft Off White - For backgrounds and light text */
-  --detail-color: #4A4A4A; /* Charcoal Black - For dark text */
+  --main-color: #FFFFFF; /* White - Main brand color for sidebar, headers, and white elements */
+  --secondary-color: #272727; /* Dark Gray - For backgrounds and dark elements */
+  --detail-color: #6DB1D8; /* Light Blue - For accent text and details */
   
   /* Applied Color Variables */
-  --background-color: var(--secondary-color); /* Background color for the entire website */
-  --default-color: var(--detail-color); /* Default color used for the majority of the text content */
-  --heading-color: var(--main-color); /* Color for headings, subheadings and title throughout the website */
-  --accent-color: var(--main-color); /* Accent color for buttons, links, and other elements that need to stand out */
-  --surface-color: var(--secondary-color); /* Background of boxed elements within sections */
-  --contrast-color: var(--secondary-color); /* Contrast color for text on dark backgrounds */
+  --background-color: var(--main-color); /* Background color for the entire website - using white */
+  --default-color: var(--secondary-color); /* Default color used for the majority of the text content - dark gray on light backgrounds */
+  --heading-color: var(--detail-color); /* Color for headings, subheadings and title throughout the website - light blue */
+  --accent-color: var(--detail-color); /* Accent color for buttons, links, and other elements that need to stand out - light blue */
+  --surface-color: var(--main-color); /* Background of boxed elements within sections - white */
+  --contrast-color: var(--main-color); /* Contrast color for text on dark backgrounds - white */
 }
 
 /* Nav Menu Colors - Using the three primary colors */
 :root {
-  --nav-color: var(--secondary-color);  /* Soft White - The default color of the main navmenu links */
-  --nav-hover-color: var(--detail-color); /* Charcoal Black - Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: var(--detail-color); /* Charcoal for mobile navigation background */
-  --nav-dropdown-background-color: var(--detail-color); /* Charcoal for dropdown items background */
-  --nav-dropdown-color: var(--secondary-color); /* Soft White - Used for navigation links of the dropdown items */
-  --nav-dropdown-hover-color: var(--detail-color); /* Charcoal Black - Applied to dropdown navigation links when hovered */
+  --nav-color: var(--main-color);  /* White - The default color of the main navmenu links */
+  --nav-hover-color: var(--detail-color); /* Light Blue - Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: var(--secondary-color); /* Dark Gray for mobile navigation background */
+  --nav-dropdown-background-color: var(--secondary-color); /* Dark Gray for dropdown items background */
+  --nav-dropdown-color: var(--main-color); /* White - Used for navigation links of the dropdown items */
+  --nav-dropdown-hover-color: var(--detail-color); /* Light Blue - Applied to dropdown navigation links when hovered */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element */
 
 .light-background {
-  --background-color: var(--secondary-color);
-  --surface-color: var(--secondary-color);
+  --background-color: var(--main-color); /* White background */
+  --default-color: var(--secondary-color); /* Dark gray text on light backgrounds */
+  --heading-color: var(--detail-color); /* Light blue headings */
+  --surface-color: var(--main-color); /* White surface */
+  --contrast-color: var(--secondary-color); /* Dark gray for contrast */
 }
 
 .dark-background {
-  --background-color: var(--detail-color);
-  --default-color: var(--secondary-color);
-  --heading-color: var(--main-color);
-  --surface-color: var(--detail-color);
-  --contrast-color: var(--secondary-color);
+  --background-color: var(--secondary-color); /* Dark gray background */
+  --default-color: var(--main-color); /* White text on dark backgrounds */
+  --heading-color: var(--detail-color); /* Light blue headings */
+  --surface-color: var(--secondary-color); /* Dark gray surface */
+  --contrast-color: var(--main-color); /* White for contrast */
 }
 
 /* Smooth scroll */
@@ -149,8 +152,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
+  color: var(--main-color);
+  background-color: var(--secondary-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -160,7 +163,7 @@ h6 {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--contrast-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--main-color), transparent 90%);
 }
 
 .header .profile-img img {
@@ -187,7 +190,7 @@ h6 {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--main-color);
 }
 
 .header .social-links {
@@ -199,8 +202,8 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  color: var(--default-color);
+  background: color-mix(in srgb, var(--main-color), transparent 90%);
+  color: var(--main-color);
   margin: 0 2px;
   border-radius: 50%;
   text-align: center;
@@ -210,8 +213,8 @@ h6 {
 }
 
 .header .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: var(--secondary-color);
+  background: var(--detail-color);
 }
 
 @media (min-width: 1200px) {
@@ -584,7 +587,7 @@ section,
   margin: 0;
   font-size: 80px;
   font-weight: 900;
-  color: var(--detail-color);
+  color: var(--secondary-color);
 }
 
 .hero .container {
@@ -596,12 +599,12 @@ section,
   margin: 5px 0 0 0;
   font-size: 32px;
   font-weight: 600;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 .hero p span {
   letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .hero .social-links {
