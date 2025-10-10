@@ -575,21 +575,22 @@ section,
   z-index: 2;
 }
 
+.hero h2 {
+  margin: 0;
+  font-size: 80px;
+  font-weight: 700;
+  color: #000000;
+}
+
 .hero .container {
   position: relative;
   z-index: 3;
 }
 
-.hero h2 {
-  margin: 0;
-  font-size: 80px;
-  font-weight: 700;
-  color: var(--contrast-color);
-}
-
 .hero p {
   margin: 5px 0 0 0;
   font-size: 32px;
+  color: #000000;
 }
 
 .hero p span {
