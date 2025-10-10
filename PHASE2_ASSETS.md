@@ -60,36 +60,41 @@
 
 ### Brand Colors (from Pallette.png)
 
-Based on your color palette image:
+Based on your color palette image with three distinct bands:
 
-**Primary Color - Blue:**
-- Hex: `#2980b9` (or similar professional blue)
-- Use: Main accent color, links, buttons, highlights
+**Primary Color - Azzurro La Plata (Dominant Blue):**
+- Hex: `#739BD4`
+- Use: Main accent color, links, buttons, highlights, dominant brand color
 - Template variable: `--accent-color`
+- Position: Left band (dominant)
 
-**Secondary Color - White:**
-- Hex: `#ffffff`
-- Use: Text on dark backgrounds, clean sections
-- Template variable: `--background-color`
+**Secondary Color - Soft White (Middle Accent):**
+- Hex: `#F4F4F8`
+- Use: Light backgrounds, clean sections, accent strip
+- Template variable: `--background-color` or `--surface-color`
+- Position: Middle strip (accent)
 
-**Detail Color - Silver/Gray:**
-- Hex: `#c0c0c0` or `#bdc3c7`
-- Use: Subtle text, borders, secondary elements
-- Template variable: Can be used for muted text
+**Tertiary Color - Deeper Silver (Pinstripe):**
+- Hex: `#7D827D`
+- Use: Subtle text, borders, secondary elements, detail work
+- Template variable: Used for muted text, borders
+- Position: Right portion (pinstripe/detail)
 
-**Supporting Colors (Professional Palette):**
-- Dark Background: `#040b14` (template default, can adjust)
-- Text Color: `#272829` (template default, can adjust)
-- Light Gray: `#f5f8fd` (template default for light sections)
+**Supporting Colors (Template Defaults):**
+- Dark Background: `#040b14` (keep for dark sections)
+- Text Color: `#272829` (keep for body text)
+- Pure White: `#ffffff` (for maximum contrast)
 
 ### Color Scheme Summary:
 ```css
---accent-color: #2980b9;           /* Main Blue */
---background-color: #ffffff;        /* White */
+--accent-color: #739BD4;           /* Azzurro La Plata - Primary/Dominant */
+--background-color: #F4F4F8;       /* Soft White - Secondary/Accent */
+--surface-color: #F4F4F8;          /* Soft White - Clean sections */
 --default-color: #272829;          /* Dark text */
---heading-color: #2980b9;          /* Blue headings */
---nav-color: #ffffff;              /* White nav text */
---contrast-color: #c0c0c0;         /* Silver details */
+--heading-color: #739BD4;          /* Azzurro La Plata headings */
+--nav-color: #F4F4F8;              /* Soft White nav text */
+--contrast-color: #7D827D;         /* Deeper Silver - Details/pinstripe */
+--nav-hover-color: #739BD4;        /* Azzurro La Plata on hover */
 ```
 
 ### Typography ✅
