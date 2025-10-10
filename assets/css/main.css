@@ -17,40 +17,45 @@
   --nav-font: "Poppins",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - Three primary colors for the entire website */
 :root { 
-  --background-color: #F4F4F8; /* Soft White - Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #739BD4; /* Azzurro La Plata - Color for headings, subheadings and title throughout the website */
-  --accent-color: #739BD4; /* Azzurro La Plata - Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* Pure white - The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --detail-color: #7D827D; /* Deeper Silver - Used for subtle text, borders, and secondary elements */
+  /* Main Color Palette */
+  --main-color: #739BD4; /* Pale Blue - Main brand color for sidebar, headers, and blue elements */
+  --secondary-color: #F4F4F8; /* Soft Off White - For backgrounds and light text */
+  --detail-color: #4A4A4A; /* Charcoal Black - For dark text */
+  
+  /* Applied Color Variables */
+  --background-color: var(--secondary-color); /* Background color for the entire website */
+  --default-color: var(--detail-color); /* Default color used for the majority of the text content */
+  --heading-color: var(--main-color); /* Color for headings, subheadings and title throughout the website */
+  --accent-color: var(--main-color); /* Accent color for buttons, links, and other elements that need to stand out */
+  --surface-color: var(--secondary-color); /* Background of boxed elements within sections */
+  --contrast-color: var(--secondary-color); /* Contrast color for text on dark backgrounds */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors - Using the three primary colors */
 :root {
-  --nav-color: #F4F4F8;  /* Soft White - The default color of the main navmenu links */
-  --nav-hover-color: #739BD4; /* Azzurro La Plata - Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #F4F4F8; /* Soft White - Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #739BD4; /* Azzurro La Plata - Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: var(--secondary-color);  /* Soft White - The default color of the main navmenu links */
+  --nav-hover-color: var(--main-color); /* Pale Blue - Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: var(--detail-color); /* Charcoal for mobile navigation background */
+  --nav-dropdown-background-color: var(--detail-color); /* Charcoal for dropdown items background */
+  --nav-dropdown-color: var(--secondary-color); /* Soft White - Used for navigation links of the dropdown items */
+  --nav-dropdown-hover-color: var(--main-color); /* Pale Blue - Applied to dropdown navigation links when hovered */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Color Presets - These classes override global colors when applied to any section or element */
 
 .light-background {
-  --background-color: #F4F4F8;
-  --surface-color: #ffffff;
+  --background-color: var(--secondary-color);
+  --surface-color: var(--secondary-color);
 }
 
 .dark-background {
-  --background-color: #040b14;
-  --default-color: #F4F4F8;
-  --heading-color: #739BD4;
-  --surface-color: #151f2b;
-  --contrast-color: #ffffff;
+  --background-color: var(--detail-color);
+  --default-color: var(--secondary-color);
+  --heading-color: var(--main-color);
+  --surface-color: var(--detail-color);
+  --contrast-color: var(--secondary-color);
 }
 
 /* Smooth scroll */
@@ -93,7 +98,7 @@ h6 {
 .php-email-form .error-message {
   display: none;
   background: #df1529;
-  color: #ffffff;
+  color: var(--secondary-color);
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -102,7 +107,7 @@ h6 {
 
 .php-email-form .sent-message {
   display: none;
-  color: #ffffff;
+  color: var(--secondary-color);
   background: #059652;
   text-align: center;
   padding: 15px;
@@ -182,7 +187,7 @@ h6 {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
-  color: var(--contrast-color);
+  color: var(--secondary-color);
 }
 
 .header .social-links {
@@ -579,7 +584,7 @@ section,
   margin: 0;
   font-size: 80px;
   font-weight: 900;
-  color: #7D827D;
+  color: var(--detail-color);
 }
 
 .hero .container {
@@ -591,7 +596,7 @@ section,
   margin: 5px 0 0 0;
   font-size: 32px;
   font-weight: 600;
-  color: #7D827D;
+  color: var(--detail-color);
 }
 
 .hero p span {
@@ -851,7 +856,7 @@ section,
   font-size: 14px;
   padding: 5px 10px;
   font-weight: 400;
-  color: #ffffff;
+  color: var(--secondary-color);
   display: inline-block;
   background-color: var(--accent-color);
 }
