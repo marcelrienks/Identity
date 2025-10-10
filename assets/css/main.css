@@ -898,6 +898,18 @@ section,
   line-height: 0;
 }
 
+/* Custom styles for portfolio images */
+.portfolio .portfolio-content img {
+  max-width: 80%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
 .portfolio .portfolio-content:hover .portfolio-info {
   opacity: 1;
 }
