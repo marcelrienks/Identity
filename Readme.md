@@ -1,308 +1,612 @@
-# Marcel Rienks - Portfolio Website
+# Portfolio Website# Marcel Rienks - Portfolio Website
+
 A modern, responsive portfolio website showcasing IT Service Delivery Management expertise and technical leadership experience.
+
+A modern, responsive portfolio website built with Bootstrap and deployed on AWS using Terraform infrastructure as code.
 
 ## 🎯 **Project Overview**
 
-[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
+[![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)
 
-This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
+[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
 
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
 
-### 🌟 **Key Features**
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+
+## Features[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
+
+
+
+- **Responsive Design** - Mobile-first responsive layout### 🌟 **Key Features**
+
+- **Modern UI/UX** - Clean design with smooth animations
+
+- **Interactive Portfolio** - Filterable portfolio section with hover effects[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+- **Performance Optimized** - Fast loading with CDN delivery
+
+- **SEO Ready** - Structured content and meta tags- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+
+- **Custom Color Scheme** - Consistent branding throughout
 
 - **Modern UI/UX** - Clean, professional design with smooth animations[![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)[![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)
 
+## Tech Stack
+
 - **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)
 
-- **Interactive Portfolio** - Clickable project showcases with hover effects## 🎯 **Project Overview**
+### Frontend
 
-- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
+- **HTML5** - Semantic markup- **Interactive Portfolio** - Clickable project showcases with hover effects## 🎯 **Project Overview**
 
-- **SEO Ready** - Structured content and meta tags for search engine optimization[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
+- **CSS3** - Custom styling with CSS variables
 
+- **Bootstrap 5.3.3** - Responsive framework- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
 
+- **JavaScript** - Interactive features
 
-## 🏗️ **Architecture & Technology Stack**This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
+- **AOS** - Scroll animations- **SEO Ready** - Structured content and meta tags for search engine optimization[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
 
+- **Typed.js** - Text typing effects
 
-
-### **Frontend Technologies**[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
-
-- **HTML5** - Semantic markup and structure
-
-- **CSS3** - Custom styling with CSS variables and animations### 🌟 **Key Features**
-
-- **Bootstrap 5.3.3** - Responsive framework and components
-
-- **JavaScript** - Interactive features and animations[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-- **AOS Library** - Scroll animations
-
-- **Typed.js** - Text typing animations- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Isotope** - Portfolio filtering
 
 
 
-### **AWS Cloud Infrastructure**- **Modern UI/UX** - Clean, professional design with smooth animations
+### AWS Infrastructure## 🏗️ **Architecture & Technology Stack**This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
 
-```
+- **S3** - Static website hosting
 
-Domain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)
+- **CloudFront** - Global CDN with HTTPS/SSL
 
-                         ↓
+- **Route 53** - DNS management
 
-                   SSL Certificate (ACM)- **Interactive Portfolio** - Clickable project showcases with hover effects## 🎯 **Project Overview**## 🎯 **Project Overview**
-
-```
-
-- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
-
-- **S3 Bucket** - Static website hosting
-
-- **CloudFront** - Global CDN with HTTPS/SSL- **SEO Ready** - Structured content and meta tags for search engine optimization
-
-- **Route 53** - DNS management and custom domain
-
-- **Certificate Manager (ACM)** - Free SSL certificates
+- **Certificate Manager (ACM)** - Free SSL certificates### **Frontend Technologies**[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
 
 - **Origin Access Control** - Secure S3 access
 
-## 🏗️ **Architecture & Technology Stack**This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
+- **HTML5** - Semantic markup and structure
 
-### **Infrastructure as Code**
+### DevOps
 
-- **Terraform** - Complete infrastructure automation
+- **Terraform** - Infrastructure as Code- **CSS3** - Custom styling with CSS variables and animations### 🌟 **Key Features**
 
-- **Modular Configuration** - Reusable and maintainable code
+- **AWS CLI** - Deployment automation
 
-- **State Management** - Infrastructure versioning and updates### **Frontend Technologies**
-
-
-
-## 🚀 **Quick Start Guide**- **HTML5** - Semantic markup and structure
+- **Git** - Version control- **Bootstrap 5.3.3** - Responsive framework and components
 
 
 
-### **Prerequisites**- **CSS3** - Custom styling with CSS variables and animations### 🌟 **Key Features**### 🌟 **Key Features**
+## Architecture- **JavaScript** - Interactive features and animations[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-```bash
 
-# Required tools- **Bootstrap 5.3.3** - Responsive framework and components
-
-brew install terraform awscli
-
-terraform --version  # >= 1.0- **JavaScript** - Interactive features and animations
-
-aws --version
 
 ```- **AOS Library** - Scroll animations
 
+Custom Domain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)
+
+                                ↓- **Typed.js** - Text typing animations- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+
+                         SSL Certificate (ACM)
+
+```
 
 
-### **1. Configure AWS Credentials**- **Typed.js** - Text typing animations- **Responsive Design** - Optimized for desktop, tablet, and mobile devices- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+
+## Quick Start### **AWS Cloud Infrastructure**- **Modern UI/UX** - Clean, professional design with smooth animations
+
+
+
+### Prerequisites```
+
+
+
+```bashDomain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)
+
+# Install required tools
+
+brew install terraform awscli                         ↓
+
+```
+
+                   SSL Certificate (ACM)- **Interactive Portfolio** - Clickable project showcases with hover effects## 🎯 **Project Overview**## 🎯 **Project Overview**
+
+### 1. Configure AWS
+
+```
 
 ```bash
+
+# Configure AWS credentials- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
 
 aws configure
-
-# Enter your Access Key ID, Secret Access Key, and Region
-
-```### **AWS Cloud Infrastructure**- **Modern UI/UX** - Clean, professional design with smooth animations- **Modern UI/UX** - Clean, professional design with smooth animations
-
-
-
-### **2. Setup Terraform Variables**```
-
-```bash
-
-cp terraform/terraform.tfvars.example terraform/terraform.tfvarsDomain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)
-
-nano terraform/terraform.tfvars  # Edit with your domain settings
-
-```                         ↓
-
-
-
-Example `terraform.tfvars`:                   SSL Certificate (ACM)- **Interactive Portfolio** - Clickable project showcases with hover effects- **Interactive Portfolio** - Clickable project showcases with hover effects
-
-```hcl
-
-domain_name = "yourdomain.com"```
-
-subdomain_name = "portfolio"
-
-aws_region = "us-east-1"- **Performance Optimized** - Fast loading with CDN delivery via CloudFront- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
-
-environment = "prod"
 
 ```- **S3 Bucket** - Static website hosting
 
 
 
-### **3. Deploy Infrastructure (First Time)**- **CloudFront** - Global CDN with HTTPS/SSL- **SEO Ready** - Structured content and meta tags for search engine optimization- **SEO Ready** - Structured content and meta tags for search engine optimization
+### 2. Setup Terraform- **CloudFront** - Global CDN with HTTPS/SSL- **SEO Ready** - Structured content and meta tags for search engine optimization
 
-```bash
 
-# Preview changes- **Route 53** - DNS management and custom domain
 
-./deploy-terraform.sh plan
+```bash- **Route 53** - DNS management and custom domain
 
-- **Certificate Manager (ACM)** - Free SSL certificates
+# Copy example configuration
 
-# Deploy everything (infrastructure + website)
+cp terraform/terraform.tfvars.example terraform/terraform.tfvars- **Certificate Manager (ACM)** - Free SSL certificates
 
-./deploy-terraform.sh apply- **Origin Access Control** - Secure S3 access
 
-```
 
-## 🏗️ **Architecture & Technology Stack**## 🏗️ **Architecture & Technology Stack**
+# Edit with your domain settings- **Origin Access Control** - Secure S3 access
 
-### **4. Update Website Content (After Initial Setup)**
+nano terraform/terraform.tfvars
 
-```bash### **Infrastructure as Code**
+```## 🏗️ **Architecture & Technology Stack**This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software development, and technical leadership. The site features a modern, responsive design optimized for performance and SEO.
 
-# Quick update of website files only
 
-./update-website.sh- **Terraform** - Complete infrastructure automation
 
-```
-
-- **Modular Configuration** - Reusable and maintainable code
-
-## 🔧 **Deployment Scripts**
-
-- **State Management** - Infrastructure versioning and updates### **Frontend Technologies**### **Frontend Technologies**
-
-### **🏗️ `deploy-terraform.sh` - Infrastructure Management**
-
-
-
-**Purpose:** Complete infrastructure deployment and management
-
-## 🚀 **Quick Start Guide**- **HTML5** - Semantic markup and structure- **HTML5** - Semantic markup and structure
-
-**Usage:**
-
-```bash
-
-./deploy-terraform.sh [plan|apply|destroy]
-
-```### **Prerequisites**- **CSS3** - Custom styling with CSS variables and animations- **CSS3** - Custom styling with CSS variables and animations
-
-
-
-**Commands:**```bash
-
-- **`./deploy-terraform.sh plan`** - Preview infrastructure changes
-
-- **`./deploy-terraform.sh apply`** - Deploy/update infrastructure + website# Required tools- **Bootstrap 5.3.3** - Responsive framework and components- **Bootstrap 5.3.3** - Responsive framework and components
-
-- **`./deploy-terraform.sh destroy`** - Remove all AWS resources
-
-brew install terraform awscli
-
-**What it does:**
-
-1. ✅ Creates/updates AWS infrastructure (S3, CloudFront, Route 53, SSL)terraform --version  # >= 1.0- **JavaScript** - Interactive features and animations- **JavaScript** - Interactive features and animations
-
-2. ✅ Handles Terraform state management
-
-3. ✅ Validates SSL certificates automaticallyaws --version
-
-4. ✅ Optionally deploys website files after infrastructure setup
-
-5. ✅ Provides infrastructure outputs (URLs, resource IDs)```- **AOS Library** - Scroll animations- **AOS Library** - Scroll animations
-
-
-
-**When to use:**
-
-- 🆕 **First deployment** of your portfolio
-
-- 🔧 **Infrastructure changes** (domain, SSL, CDN settings)### **1. Configure AWS Credentials**- **Typed.js** - Text typing animations- **Typed.js** - Text typing animations
-
-- 🛠️ **Terraform configuration** updates
-
-- 🗑️ **Complete teardown** of resources```bash
-
-
-
----aws configure
-
-
-
-### **⚡ `update-website.sh` - Quick Content Updates**# Enter your Access Key ID, Secret Access Key, and Region
-
-
-
-**Purpose:** Fast website content updates without infrastructure changes```### **AWS Cloud Infrastructure**### **AWS Cloud Infrastructure**
-
-
-
-**Usage:**
-
-```bash
-
-./update-website.sh### **2. Setup Terraform Variables**``````
-
-```
-
-```bash
-
-**What it does:**
-
-1. ✅ Reads infrastructure info from Terraform statecp terraform/terraform.tfvars.example terraform/terraform.tfvarsDomain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)Domain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)
-
-2. ✅ Syncs website files to S3 (excludes dev files)
-
-3. ✅ Invalidates CloudFront cache for immediate updatesnano terraform/terraform.tfvars  # Edit with your domain settings
-
-4. ✅ Shows deployment progress and final URL
-
-```                         ↓                         ↓
-
-**When to use:**
-
-- 📝 **Content updates** (text, images, styling)
-
-- 🐛 **Bug fixes** in HTML/CSS/JavaScript
-
-- 🎨 **Design changes** and new featuresExample `terraform.tfvars`:                   SSL Certificate (ACM)                   SSL Certificate (ACM)
-
-- 📸 **Image updates** in portfolio
+Example configuration:### **Infrastructure as Code**
 
 ```hcl
 
-**Speed:** ~30 seconds vs 5-15 minutes for full Terraform deployment
-
-domain_name = "yourdomain.com"``````
-
-## 📁 **Project Structure**
+domain_name = "yourdomain.com"- **Terraform** - Complete infrastructure automation
 
 subdomain_name = "portfolio"
 
+aws_region = "us-east-1"- **Modular Configuration** - Reusable and maintainable code
+
+environment = "prod"
+
+```- **State Management** - Infrastructure versioning and updates### **Frontend Technologies**
+
+
+
+### 3. Deploy Infrastructure
+
+
+
+```bash## 🚀 **Quick Start Guide**- **HTML5** - Semantic markup and structure
+
+# Preview changes
+
+./deploy-terraform.sh plan
+
+
+
+# Deploy everything### **Prerequisites**- **CSS3** - Custom styling with CSS variables and animations### 🌟 **Key Features**### 🌟 **Key Features**
+
+./deploy-terraform.sh apply
+
+``````bash
+
+
+
+### 4. Update Website# Required tools- **Bootstrap 5.3.3** - Responsive framework and components
+
+
+
+```bashbrew install terraform awscli
+
+# Quick content updates (after initial deployment)
+
+./update-website.shterraform --version  # >= 1.0- **JavaScript** - Interactive features and animations
+
 ```
 
-├── index.html                 # Main website fileaws_region = "us-east-1"
+aws --version
 
-├── assets/                    # Static assets
+## Project Structure
 
-│   ├── css/main.css          # Custom styles with color variablesenvironment = "prod"
+```- **AOS Library** - Scroll animations
+
+```
+
+├── index.html                 # Main website
+
+├── assets/
+
+│   ├── css/main.css          # Custom styles### **1. Configure AWS Credentials**- **Typed.js** - Text typing animations- **Responsive Design** - Optimized for desktop, tablet, and mobile devices- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 
 │   ├── img/                  # Images and icons
 
-│   └── vendor/               # Third-party libraries```- **S3 Bucket** - Static website hosting- **S3 Bucket** - Static website hosting
+│   ├── js/main.js           # Custom JavaScript```bash
 
-├── terraform/                 # Infrastructure as Code
+│   └── vendor/              # Third-party libraries
+
+├── terraform/               # Infrastructure as Codeaws configure
+
+│   ├── main.tf             # AWS resources
+
+│   ├── variables.tf        # Input variables# Enter your Access Key ID, Secret Access Key, and Region
+
+│   ├── outputs.tf          # Output values
+
+│   └── terraform.tfvars    # Configuration```### **AWS Cloud Infrastructure**- **Modern UI/UX** - Clean, professional design with smooth animations- **Modern UI/UX** - Clean, professional design with smooth animations
+
+├── deploy-terraform.sh     # Infrastructure deployment
+
+├── update-website.sh       # Quick content updates
+
+└── README.md              # This file
+
+```### **2. Setup Terraform Variables**```
+
+
+
+## Deployment Scripts```bash
+
+
+
+### Infrastructure Management (`deploy-terraform.sh`)cp terraform/terraform.tfvars.example terraform/terraform.tfvarsDomain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)- **Custom Color Scheme** - Unique branding with light blue (#6DB1D8), white (#FFFFFF), and dark gray (#272727)
+
+
+
+Manages complete AWS infrastructure deployment.nano terraform/terraform.tfvars  # Edit with your domain settings
+
+
+
+```bash```                         ↓
+
+./deploy-terraform.sh [plan|apply|destroy]
+
+```
+
+
+
+**Commands:**Example `terraform.tfvars`:                   SSL Certificate (ACM)- **Interactive Portfolio** - Clickable project showcases with hover effects- **Interactive Portfolio** - Clickable project showcases with hover effects
+
+- `plan` - Preview infrastructure changes
+
+- `apply` - Deploy/update infrastructure and website```hcl
+
+- `destroy` - Remove all AWS resources
+
+domain_name = "yourdomain.com"```
+
+**Use for:**
+
+- First deploymentsubdomain_name = "portfolio"
+
+- Infrastructure changes
+
+- SSL certificate updatesaws_region = "us-east-1"- **Performance Optimized** - Fast loading with CDN delivery via CloudFront- **Performance Optimized** - Fast loading with CDN delivery via CloudFront
+
+- Complete teardown
+
+environment = "prod"
+
+### Content Updates (`update-website.sh`)
+
+```- **S3 Bucket** - Static website hosting
+
+Quick website file updates without infrastructure changes.
+
+
+
+```bash
+
+./update-website.sh### **3. Deploy Infrastructure (First Time)**- **CloudFront** - Global CDN with HTTPS/SSL- **SEO Ready** - Structured content and meta tags for search engine optimization- **SEO Ready** - Structured content and meta tags for search engine optimization
+
+```
+
+```bash
+
+**Use for:**
+
+- Content changes# Preview changes- **Route 53** - DNS management and custom domain
+
+- Bug fixes
+
+- Style updates./deploy-terraform.sh plan
+
+- New images
+
+- **Certificate Manager (ACM)** - Free SSL certificates
+
+**Performance:** ~30 seconds vs 5-15 minutes for full deployment
+
+# Deploy everything (infrastructure + website)
+
+## Development Workflow
+
+./deploy-terraform.sh apply- **Origin Access Control** - Secure S3 access
+
+### Local Development
+
+```
+
+1. **Install Live Server extension** in VS Code
+
+2. **Right-click `index.html`** → "Open with Live Server"## 🏗️ **Architecture & Technology Stack**## 🏗️ **Architecture & Technology Stack**
+
+3. **Make changes** and see them instantly
+
+### **4. Update Website Content (After Initial Setup)**
+
+### Content Updates
+
+```bash### **Infrastructure as Code**
+
+```bash
+
+# 1. Edit files locally# Quick update of website files only
+
+vim index.html
+
+./update-website.sh- **Terraform** - Complete infrastructure automation
+
+# 2. Test changes with Live Server
+
+```
+
+# 3. Deploy updates
+
+./update-website.sh- **Modular Configuration** - Reusable and maintainable code
+
+```
+
+## 🔧 **Deployment Scripts**
+
+### Infrastructure Updates
+
+- **State Management** - Infrastructure versioning and updates### **Frontend Technologies**### **Frontend Technologies**
+
+```bash
+
+# 1. Modify Terraform files### **🏗️ `deploy-terraform.sh` - Infrastructure Management**
+
+vim terraform/main.tf
+
+
+
+# 2. Preview changes
+
+./deploy-terraform.sh plan**Purpose:** Complete infrastructure deployment and management
+
+
+
+# 3. Apply changes## 🚀 **Quick Start Guide**- **HTML5** - Semantic markup and structure- **HTML5** - Semantic markup and structure
+
+./deploy-terraform.sh apply
+
+```**Usage:**
+
+
+
+## Customization```bash
+
+
+
+### Colors./deploy-terraform.sh [plan|apply|destroy]
+
+
+
+The website uses CSS variables for easy theming:```### **Prerequisites**- **CSS3** - Custom styling with CSS variables and animations- **CSS3** - Custom styling with CSS variables and animations
+
+
+
+```css
+
+:root {
+
+  --main-color: #FFFFFF;      /* White */**Commands:**```bash
+
+  --secondary-color: #272727;  /* Dark Gray */
+
+  --detail-color: #6DB1D8;    /* Light Blue */- **`./deploy-terraform.sh plan`** - Preview infrastructure changes
+
+}
+
+```- **`./deploy-terraform.sh apply`** - Deploy/update infrastructure + website# Required tools- **Bootstrap 5.3.3** - Responsive framework and components- **Bootstrap 5.3.3** - Responsive framework and components
+
+
+
+### Content- **`./deploy-terraform.sh destroy`** - Remove all AWS resources
+
+
+
+- **Personal Info** - Update in `index.html`brew install terraform awscli
+
+- **Portfolio Items** - Replace images in `assets/img/portfolio/`
+
+- **Skills & Experience** - Edit resume section**What it does:**
+
+- **Contact Info** - Update contact section
+
+1. ✅ Creates/updates AWS infrastructure (S3, CloudFront, Route 53, SSL)terraform --version  # >= 1.0- **JavaScript** - Interactive features and animations- **JavaScript** - Interactive features and animations
+
+### Styling
+
+2. ✅ Handles Terraform state management
+
+- **Main Styles** - `assets/css/main.css`
+
+- **Color Scheme** - CSS variables at top of main.css3. ✅ Validates SSL certificates automaticallyaws --version
+
+- **Responsive Design** - Bootstrap classes + custom CSS
+
+4. ✅ Optionally deploys website files after infrastructure setup
+
+## Cost Estimate
+
+5. ✅ Provides infrastructure outputs (URLs, resource IDs)```- **AOS Library** - Scroll animations- **AOS Library** - Scroll animations
+
+| Service | Purpose | Monthly Cost |
+
+|---------|---------|--------------|
+
+| S3 Storage | Static hosting | $1-5 |
+
+| CloudFront | Global CDN | $1-10 |**When to use:**
+
+| Route 53 | DNS hosting | $0.50 |
+
+| ACM Certificate | SSL/HTTPS | FREE |- 🆕 **First deployment** of your portfolio
+
+| **Total** | | **$2-16** |
+
+- 🔧 **Infrastructure changes** (domain, SSL, CDN settings)### **1. Configure AWS Credentials**- **Typed.js** - Text typing animations- **Typed.js** - Text typing animations
+
+## Troubleshooting
+
+- 🛠️ **Terraform configuration** updates
+
+### Common Issues
+
+- 🗑️ **Complete teardown** of resources```bash
+
+**SSL Certificate validation stuck:**
+
+```bash
+
+# Check DNS records
+
+aws route53 list-resource-record-sets --hosted-zone-id YOUR_ZONE_ID---aws configure
+
+
+
+# Wait 5-30 minutes for validation
+
+terraform refresh
+
+```### **⚡ `update-website.sh` - Quick Content Updates**# Enter your Access Key ID, Secret Access Key, and Region
+
+
+
+**Website changes not visible:**
+
+```bash
+
+# Clear CloudFront cache**Purpose:** Fast website content updates without infrastructure changes```### **AWS Cloud Infrastructure**### **AWS Cloud Infrastructure**
+
+./update-website.sh
+
+
+
+# Or manually invalidate
+
+aws cloudfront create-invalidation --distribution-id DIST_ID --paths "/*"**Usage:**
+
+```
+
+```bash
+
+**Permission errors:**
+
+```bash./update-website.sh### **2. Setup Terraform Variables**``````
+
+# Check AWS configuration
+
+aws sts get-caller-identity```
+
+aws iam get-user
+
+``````bash
+
+
+
+### Terraform Issues**What it does:**
+
+
+
+```bash1. ✅ Reads infrastructure info from Terraform statecp terraform/terraform.tfvars.example terraform/terraform.tfvarsDomain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)Domain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)
+
+# Backup state
+
+cp terraform/terraform.tfstate terraform/terraform.tfstate.backup2. ✅ Syncs website files to S3 (excludes dev files)
+
+
+
+# Unlock stuck state3. ✅ Invalidates CloudFront cache for immediate updatesnano terraform/terraform.tfvars  # Edit with your domain settings
+
+terraform force-unlock LOCK_ID
+
+4. ✅ Shows deployment progress and final URL
+
+# Refresh state
+
+terraform refresh```                         ↓                         ↓
+
+```
+
+**When to use:**
+
+## Security
+
+- 📝 **Content updates** (text, images, styling)
+
+- **HTTPS Only** - SSL certificates via ACM
+
+- **Origin Access Control** - Secure CloudFront → S3 access- 🐛 **Bug fixes** in HTML/CSS/JavaScript
+
+- **No Server Dependencies** - Static files only
+
+- **AWS Security** - Built on AWS best practices- 🎨 **Design changes** and new featuresExample `terraform.tfvars`:                   SSL Certificate (ACM)                   SSL Certificate (ACM)
+
+
+
+## Performance- 📸 **Image updates** in portfolio
+
+
+
+- **CDN Distribution** - Global content delivery```hcl
+
+- **Image Optimization** - Responsive images
+
+- **Minified Assets** - Optimized vendor libraries**Speed:** ~30 seconds vs 5-15 minutes for full Terraform deployment
+
+- **Caching Strategy** - Browser and CDN caching
+
+- **Mobile Optimized** - Fast loading on all devicesdomain_name = "yourdomain.com"``````
+
+
+
+## Contributing## 📁 **Project Structure**
+
+
+
+1. Fork the repositorysubdomain_name = "portfolio"
+
+2. Create a feature branch
+
+3. Make your changes```
+
+4. Test locally with Live Server
+
+5. Submit a pull request├── index.html                 # Main website fileaws_region = "us-east-1"
+
+
+
+## License├── assets/                    # Static assets
+
+
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.│   ├── css/main.css          # Custom styles with color variablesenvironment = "prod"
+
+
+
+## Template Attribution│   ├── img/                  # Images and icons
+
+
+
+- **Original Template:** [iPortfolio](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) by BootstrapMade│   └── vendor/               # Third-party libraries```- **S3 Bucket** - Static website hosting- **S3 Bucket** - Static website hosting
+
+- **Version:** v3.9.1 (Bootstrap 5.3.3)
+
+- **License:** Free with attribution├── terraform/                 # Infrastructure as Code
+
+- **Distributed by:** ThemeWagon
 
 │   ├── main.tf               # AWS resource definitions
 
+---
+
 │   ├── variables.tf          # Input variables
 
+**Built with Terraform, AWS, and modern web technologies.**
 │   ├── outputs.tf            # Output values### **3. Deploy Infrastructure**- **CloudFront** - Global CDN with HTTPS/SSL- **CloudFront** - Global CDN with HTTPS/SSL
 
 │   └── terraform.tfvars      # Configuration (create from example)
