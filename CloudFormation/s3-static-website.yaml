@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  CloudFormation template to provision an S3 bucket for static website hosting and optionally set up Route 53 DNS for a subdomain. Domain and subdomain specifics are provided at deployment time.
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name for the S3 bucket (must be globally unique)
+  IndexDocument:
+    Type: String
+    Default: index.html
+    Description: The index document for the website
+  ErrorDocument:
+    Type: String
+    Default: error.html
+    Description: The error document for the website
+  HostedZoneName:
+    Type: String
+    Description: The Route 53 hosted zone domain name (e.g., example.com.)
+  Subdomain:
+    Type: String
+    Description: The subdomain to provision (e.g., www)
+
+Resources:
+  StaticSiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      WebsiteConfiguration:
+        IndexDocument: !Ref IndexDocument
+        ErrorDocument: !Ref ErrorDocument
+      AccessControl: PublicRead
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref StaticSiteBucket
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            Resource: !Sub "arn:aws:s3:::${BucketName}/*"
+
+  WebsiteDNSRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneName: !Ref HostedZoneName
+      Name: !Sub "${Subdomain}.${HostedZoneName}"
+      Type: CNAME
+      TTL: '300'
+      ResourceRecords:
+        - !GetAtt StaticSiteBucket.WebsiteURL
+
+Outputs:
+  WebsiteURL:
+    Description: S3 Website endpoint
+    Value: !GetAtt StaticSiteBucket.WebsiteURL
+  BucketName:
+    Description: Name of the S3 bucket
+    Value: !Ref StaticSiteBucket
+  SubdomainURL:
+    Description: The full subdomain URL
+    Value: !Sub "http://${Subdomain}.${HostedZoneName}"

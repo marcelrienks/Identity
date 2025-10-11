@@ -46,161 +46,36 @@ This is a **professional portfolio website** built for Marcel Rienks, showcasing
 - **Route 53** — DNS management and custom domain (optional)
 - **Certificate Manager (ACM)** — Free SSL certificates (optional)
 
-### DevOps
-
-- **Terraform** — Complete infrastructure automation
-- **AWS CLI** — Deployment automation
-- **Git** — Version control
-
----
-
-## 🏗️ Architecture & Project Structure
-
-```
-Custom Domain (Route 53) → CloudFront (CDN) → S3 Bucket (Static Files)
-                                ↓
-                         SSL Certificate (ACM)
-```
-
-**Project Structure:**
-
-```
-├── index.html                 # Main website file
-├── assets/                    # Static assets
-│   ├── css/main.css           # Custom styles with color variables
-│   ├── img/                   # Images and icons
-│   ├── js/main.js             # Custom JavaScript
-│   └── vendor/                # Third-party libraries
-├── terraform/                 # Infrastructure as Code
-│   ├── main.tf                # AWS resource definitions
-│   ├── variables.tf           # Input variables
-│   ├── outputs.tf             # Output values
-│   └── terraform.tfvars       # Configuration (create from example)
-├── deploy-terraform.sh        # Infrastructure deployment script
-├── update-website.sh          # Quick website update script
-└── README.md                  # This file
-```
-
 ---
 
 ## 🚀 Quick Start Guide
 
-### Prerequisites
+You can deploy this project as a static website using AWS CloudFormation. A ready-to-use template is provided in `CloudFormation/s3-static-website.yaml`.
 
-- [x] [Terraform](https://www.terraform.io/) >= 1.0
-- [x] [AWS CLI](https://aws.amazon.com/cli/)
-- [x] Git
+### Deploying with AWS CLI
 
-**Install:**
+1. Ensure you have the AWS CLI installed and configured (`aws configure`).
+2. Run the following command, replacing the parameter values as needed:
 
-```bash
-brew install terraform awscli
-terraform --version
-aws --version
+```sh
+aws cloudformation deploy \
+       --template-file CloudFormation/s3-static-website.yaml \
+       --stack-name my-static-site \
+       --parameter-overrides BucketName=my-bucket HostedZoneName=example.com. Subdomain=www \
+       --region us-east-1
 ```
 
-### 1. Configure AWS Credentials
+**Parameters:**
+- `BucketName` – Globally unique S3 bucket name
+- `HostedZoneName` – Your Route 53 hosted zone (e.g., example.com.)
+- `Subdomain` – Subdomain to provision (e.g., www)
+- `IndexDocument` – (Optional) Defaults to `index.html`
+- `ErrorDocument` – (Optional) Defaults to `error.html`
 
-```bash
-aws configure
-# Enter your Access Key ID, Secret Access Key, and Region
-```
-
-### 2. Setup Terraform Variables
-
-```bash
-cp terraform/terraform.tfvars.example terraform/terraform.tfvars
-nano terraform/terraform.tfvars  # Edit with your domain settings
-```
-
-Example `terraform.tfvars`:
-```hcl
-domain_name = "yourdomain.com"
-subdomain_name = "portfolio"
-aws_region = "us-east-1"
-environment = "prod"
-```
-
-### 3. Deploy Infrastructure
-
-```bash
-./deploy-terraform.sh plan   # Preview changes
-./deploy-terraform.sh apply  # Apply changes (infra + website)
-```
-
-### 4. Update Website Content (After Initial Setup)
-
-```bash
-# Quick update of website files only
-./update-website.sh
-```
-
----
-
-## 🔧 Deployment Scripts
-
-### Infrastructure Management (`deploy-terraform.sh`)
-
-- `plan` — Preview infrastructure changes
-- `apply` — Deploy/update infrastructure and website
-- `destroy` — Remove all AWS resources
-
-**Use for:**
-- First deployment
-- Infrastructure changes (domain, SSL, CDN)
-- Complete teardown
-
-### Content Updates (`update-website.sh`)
-
-Quick static website file updates without infrastructure changes.
-
-**Use for:**
-- Content changes
-- Bug fixes
-- Style updates
-- New images
-
-**Performance:** ~30 seconds vs 5-15 minutes for full deployment
-
----
-
-## 💰 Cost Breakdown
-
-| Service         | Purpose           | Cost         |
-|-----------------|-------------------|--------------|
-| S3 Storage      | Static hosting    | $1–5         |
-| CloudFront      | Global CDN        | $1–10        |
-| Route 53        | DNS hosting       | $0.50        |
-| ACM Certificate | SSL/HTTPS         | FREE ✨      |
-| **Total**       |                   | **~$2–16/month** |
-
-*Costs vary by traffic and CloudFront price class.*
-
----
-
-## 📚 Documentation
-
-- **[Terraform Deployment Guide](TERRAFORM-DEPLOYMENT-GUIDE.md)** — Detailed deployment instructions
-- **[AWS Architecture](terraform/main.tf)** — Infrastructure configuration
-- **[Bootstrap Documentation](https://getbootstrap.com/docs/5.3/)** — UI framework reference
-
----
-
-## 🤝 Contributing
-
-This is a personal portfolio project, but you are welcome to use it as a template:
-
-1. **Fork the repository**
-2. **Update personal information** in `index.html`
-3. **Customize colors** in `assets/css/main.css`
-4. **Replace images** in `assets/img/`
-5. **Configure terraform variables** for your domain
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+**Note:**
+- The `--region` flag specifies the AWS region for deployment.
+- You will need to provide all required parameters at runtime.
+- The template provisions an S3 bucket for static website hosting and a Route 53 DNS record for your subdomain.
 
 ---
 
@@ -212,14 +87,3 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 - **Distributed by:** ThemeWagon
 
 ---
-
-## 📞 Contact & Support
-
-- **Portfolio Website:** [portfolio.yourdomain.com](https://portfolio.yourdomain.com)
-- **GitHub:** [@marcelrienks](https://github.com/marcelrienks)
-- **LinkedIn:** [marcel-rienks-07a56730](https://linkedin.com/in/marcel-rienks-07a56730)
-- **Email:** marcelrienks@gmail.com
-
----
-
-**Built with ❤️ using Terraform, AWS, and modern web technologies.**
