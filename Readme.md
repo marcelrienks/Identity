@@ -3,7 +3,6 @@
 A modern, responsive portfolio website built with Bootstrap and deployed on AWS using Terraform infrastructure as code. This site showcases IT Service Delivery Management and technology expertise in a professional, high-performance format.
 
 [![AWS](https://img.shields.io/badge/AWS-Cloud%20Hosting-orange?logo=amazon-aws)](https://aws.amazon.com/)
-[![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-623CE4?logo=terraform)](https://www.terraform.io/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?logo=bootstrap)](https://getbootstrap.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
@@ -11,7 +10,7 @@ A modern, responsive portfolio website built with Bootstrap and deployed on AWS 
 
 ## 🎯 Project Overview
 
-This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software engineering, and cloud infrastructure. It is designed to be highly customizable, mobile-responsive, and easily deployable on AWS using Infrastructure as Code.
+This is a **professional portfolio website** built for Marcel Rienks, showcasing 20+ years of experience in IT Service Delivery Management, software engineering, and cloud infrastructure. It is designed to be highly customizable, mobile-responsive, and easily deployable on AWS or any static hosting provider.
 
 ---
 
@@ -40,13 +39,12 @@ This is a **professional portfolio website** built for Marcel Rienks, showcasing
 - **Typed.js** — Text typing animations
 - **Isotope** — Portfolio filtering
 
-### AWS Cloud Infrastructure
+### Hosting
 
-- **S3** — Static website hosting
-- **CloudFront** — Global CDN with HTTPS/SSL
-- **Route 53** — DNS management and custom domain
-- **Certificate Manager (ACM)** — Free SSL certificates
-- **Origin Access Control** — Secure S3 access
+- **S3** — Static website hosting (optional)
+- **CloudFront** — Global CDN with HTTPS/SSL (optional)
+- **Route 53** — DNS management and custom domain (optional)
+- **Certificate Manager (ACM)** — Free SSL certificates (optional)
 
 ### DevOps
 
