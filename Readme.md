@@ -52,7 +52,7 @@ This is a **professional portfolio website** built for Marcel Rienks, showcasing
 
 You can deploy this project as a static website using AWS CloudFormation. A ready-to-use template is provided in `CloudFormation/s3-static-website.yaml`.
 
-### Deploying with AWS CLI
+### Provisioning infrastructure with AWS CLI
 
 1. Ensure you have the AWS CLI installed and configured (`aws configure`).
 2. Run the following command, replacing the parameter values as needed:
@@ -61,21 +61,52 @@ You can deploy this project as a static website using AWS CloudFormation. A read
 aws cloudformation deploy \
        --template-file CloudFormation/s3-static-website.yaml \
        --stack-name my-static-site \
-       --parameter-overrides BucketName=my-bucket HostedZoneName=example.com. Subdomain=www \
+       --parameter-overrides HostedZoneName=example.com. DomainName=example.com Subdomain=www \
        --region us-east-1
 ```
 
 **Parameters:**
-- `BucketName` – Globally unique S3 bucket name
-- `HostedZoneName` – Your Route 53 hosted zone (e.g., example.com.)
+- `HostedZoneName` – Your Route 53 hosted zone WITH trailing dot (e.g., example.com.)
+- `DomainName` – Your domain name WITHOUT trailing dot (e.g., example.com)
 - `Subdomain` – Subdomain to provision (e.g., www)
 - `IndexDocument` – (Optional) Defaults to `index.html`
 - `ErrorDocument` – (Optional) Defaults to `error.html`
 
-**Note:**
-- The `--region` flag specifies the AWS region for deployment.
-- You will need to provide all required parameters at runtime.
-- The template provisions an S3 bucket for static website hosting and a Route 53 DNS record for your subdomain.
+
+**Important:**
+- The stack **must be deployed in us-east-1 region** because ACM certificates for CloudFront must be in us-east-1
+- The S3 bucket name is automatically set to `{Subdomain}-{DomainName}-static` (e.g., www-example.com-static)
+- The template provisions an S3 bucket, CloudFront distribution with HTTPS/SSL, ACM certificate, and Route 53 DNS record
+- ACM certificate is automatically created and validated via DNS
+- CloudFront provides global CDN with HTTPS support and caching
+
+### Uploading Website Files to S3
+
+After the CloudFormation stack is created, you must upload your website files to the S3 bucket. CloudFormation does not upload files automatically.
+
+**Steps:**
+1. The S3 bucket name is automatically set to `{Subdomain}-{DomainName}-static` (e.g., www-example.com-static).
+2. Use the AWS CLI to upload your files:
+
+```sh
+# Upload all static assets (CSS, JS, images, etc.)
+aws s3 sync ./assets s3://www-example.com-static/assets
+
+# Upload the main HTML file
+aws s3 cp ./index.html s3://www-example.com-static/index.html
+```
+
+Replace `www-example.com-static` with your actual bucket name based on your subdomain and domain.
+
+After uploading, you may need to invalidate the CloudFront cache to see changes immediately:
+
+```sh
+aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+```
+
+You can find the distribution ID in the CloudFormation stack outputs or AWS Console.
+
+---
 
 ---
 

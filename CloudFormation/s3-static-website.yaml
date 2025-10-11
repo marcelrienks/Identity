@@ -1,11 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: >
-  CloudFormation template to provision an S3 bucket for static website hosting and optionally set up Route 53 DNS for a subdomain. Domain and subdomain specifics are provided at deployment time.
+  CloudFormation template to provision an S3 bucket for static website hosting with CloudFront CDN and SSL/TLS support.
+  Includes ACM certificate with automatic DNS validation and Route 53 DNS configuration for a subdomain with HTTPS enabled.
 
 Parameters:
-  BucketName:
-    Type: String
-    Description: Name for the S3 bucket (must be globally unique)
   IndexDocument:
     Type: String
     Default: index.html
@@ -16,25 +14,37 @@ Parameters:
     Description: The error document for the website
   HostedZoneName:
     Type: String
-    Description: The Route 53 hosted zone domain name (e.g., example.com.)
+    Description: The Route 53 hosted zone domain name WITH trailing dot (e.g., example.com.)
+  DomainName:
+    Type: String
+    Description: The domain name WITHOUT trailing dot (e.g., example.com)
   Subdomain:
     Type: String
     Description: The subdomain to provision (e.g., www)
 
 Resources:
+  # ACM Certificate for CloudFront (must be in us-east-1)
+  SSLCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Sub "${Subdomain}.${DomainName}"
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Sub "${Subdomain}.${DomainName}"
+          HostedZoneId: Z0003562GQFFYQVGWRWO
+
   StaticSiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Ref BucketName
-      WebsiteConfiguration:
-        IndexDocument: !Ref IndexDocument
-        ErrorDocument: !Ref ErrorDocument
-      AccessControl: PublicRead
+      BucketName: !Sub "${Subdomain}-${DomainName}-static"
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: ObjectWriter
       PublicAccessBlockConfiguration:
-        BlockPublicAcls: false
-        BlockPublicPolicy: false
-        IgnorePublicAcls: false
-        RestrictPublicBuckets: false
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
 
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
@@ -43,27 +53,86 @@ Resources:
       PolicyDocument:
         Statement:
           - Effect: Allow
-            Principal: "*"
+            Principal:
+              Service: cloudfront.amazonaws.com
             Action: s3:GetObject
-            Resource: !Sub "arn:aws:s3:::${BucketName}/*"
+            Resource: !Sub "arn:aws:s3:::${Subdomain}-${DomainName}-static/*"
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution}"
+
+  CloudFrontOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub "${Subdomain}.${DomainName}-OAC"
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn: SSLCertificate
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        DefaultRootObject: !Ref IndexDocument
+        Aliases:
+          - !Sub "${Subdomain}.${DomainName}"
+        Origins:
+          - Id: S3Origin
+            DomainName: !GetAtt StaticSiteBucket.RegionalDomainName
+            S3OriginConfig:
+              OriginAccessIdentity: ""
+            OriginAccessControlId: !Ref CloudFrontOriginAccessControl
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+        ViewerCertificate:
+          AcmCertificateArn: !Ref SSLCertificate
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+        CustomErrorResponses:
+          - ErrorCode: 404
+            ResponseCode: 404
+            ResponsePagePath: !Sub "/${ErrorDocument}"
+          - ErrorCode: 403
+            ResponseCode: 403
+            ResponsePagePath: !Sub "/${ErrorDocument}"
+        HttpVersion: http2and3
 
   WebsiteDNSRecord:
     Type: AWS::Route53::RecordSet
     Properties:
       HostedZoneName: !Ref HostedZoneName
       Name: !Sub "${Subdomain}.${HostedZoneName}"
-      Type: CNAME
-      TTL: '300'
-      ResourceRecords:
-        - !GetAtt StaticSiteBucket.WebsiteURL
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt CloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2  # CloudFront hosted zone ID (constant)
 
 Outputs:
   WebsiteURL:
-    Description: S3 Website endpoint
-    Value: !GetAtt StaticSiteBucket.WebsiteURL
+    Description: CloudFront distribution URL
+    Value: !Sub "https://${Subdomain}.${DomainName}"
+  CloudFrontDomainName:
+    Description: CloudFront distribution domain name
+    Value: !GetAtt CloudFrontDistribution.DomainName
   BucketName:
     Description: Name of the S3 bucket
     Value: !Ref StaticSiteBucket
-  SubdomainURL:
-    Description: The full subdomain URL
-    Value: !Sub "http://${Subdomain}.${HostedZoneName}"
+  DistributionId:
+    Description: CloudFront distribution ID
+    Value: !Ref CloudFrontDistribution
